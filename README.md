@@ -27,15 +27,15 @@
 # Screenshots:
 ## Query Statements
 ### 1. Employee Table
-- 
+- ![Image](https://github.com/user-attachments/assets/b498133d-3217-4e49-a99e-034cd2fd0cc0)
 ### 2. Department Table
-- 
+- ![Image](https://github.com/user-attachments/assets/df99dbf8-66cb-40d1-ac64-6dd44b23d96d)
 ### 3. Employee Departments Table
-- 
+- ![Image](https://github.com/user-attachments/assets/a38b7700-6b85-4289-99e2-079a2066b877)
 ### 4. Employee Project Table
-- 
+- ![Image](https://github.com/user-attachments/assets/f616c818-4c2a-45d8-a29c-858e707fe2ef)
 ### 5. Managers Table
-- 
+- ![Image](https://github.com/user-attachments/assets/240ad016-e5f2-48a7-be3c-be9c7e3c4c9e)
 ## Table Structure
 ### 1. Employee Table
 - ![Image](https://github.com/user-attachments/assets/f21a67d7-9648-4df4-a877-7c68b2818fb3)
