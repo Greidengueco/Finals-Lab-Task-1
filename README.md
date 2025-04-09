@@ -1,4 +1,4 @@
-# Finals-Lab-Task-1
+# [Finals-Lab-Task-1](https://github.com/user-attachments/files/19663244/Gueco.docx)
 - This portfolio focuses on learning MySQL basics through a company database. It covers tasks like writing SQL queries, creating tables, and making an ER diagram. It also includes SQL copies of the database and table structures.
 
 ## Step by Step Process
