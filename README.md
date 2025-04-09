@@ -35,7 +35,7 @@
 ### 4. Employee Project Table
 - ![Image](https://github.com/user-attachments/assets/f616c818-4c2a-45d8-a29c-858e707fe2ef)
 ### 5. Managers Table
-- ![Image](https://github.com/user-attachments/assets/240ad016-e5f2-48a7-be3c-be9c7e3c4c9e)
+- ![Image](https://github.com/user-attachments/assets/6d758544-6e6d-43af-9ea1-2a0c032e5fe5)
 ## Table Structure
 ### 1. Employee Table
 - ![Image](https://github.com/user-attachments/assets/f21a67d7-9648-4df4-a877-7c68b2818fb3)
