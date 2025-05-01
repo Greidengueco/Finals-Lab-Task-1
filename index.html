@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finals Lab Task 1 - MySQL Basics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Share Tech Mono', monospace;
+      background: black;
+      color: #00f0ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    body {
+      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+
+    .content {
+      width: 100%;
+      max-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.8);
+      border: 2px solid #00f0ff;
+      padding: 40px;
+      max-width: 900px;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 0 50px rgba(0, 240, 255, 0.5);
+      position: relative;
+      z-index: 2;
+      animation: floating 5s ease-in-out infinite;
+      transition: transform 0.3s ease;
+      overflow: hidden;  /* Hide scrollbars */
+      overflow-y: scroll;  /* Allow vertical scroll */
+      max-height: 85vh;  /* Max height for scrolling */
+    }
+
+    /* Hide the scrollbar */
+    .container::-webkit-scrollbar {
+      display: none; /* Hides the scrollbar in webkit browsers (Chrome, Safari) */
+    }
+
+    .container {
+      scrollbar-width: none; /* Hides the scrollbar in Firefox */
+    }
+
+    @keyframes floating {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      color: #00f0ff;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #00f0ff;
+      padding-bottom: 10px;
+    }
+
+    h2, h3 {
+      margin-top: 20px;
+      color: #ff3c57;
+      font-size: 1.6em;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    img {
+      width: 80%; /* Smaller images */
+      max-width: 600px;
+      border-radius: 10px;
+      margin: 20px 0;
+      box-shadow: 0 0 15px #00f0ff;
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .system-btn {
+      padding: 12px 30px;
+      background: transparent;
+      border: 2px solid #00f0ff;
+      color: #00f0ff;
+      font-size: 1.2rem; /* Slightly larger font size */
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s ease;
+      transform: scale(1);
+    }
+
+    .system-btn:hover {
+      background-color: #00f0ff;
+      color: black;
+      transform: scale(1.1); /* Zoom effect on hover */
+    }
+
+    .system-btn:active {
+      transform: scale(1.05); /* Slight shrink when clicked */
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <div class="container">
+      <h1>FINAL LAB TASK 1</h1>
+
+      <p style="color: #ff3c57; font-size: 1.3em; text-align: center;">
+        This portfolio focuses on learning MySQL basics through a company database. It covers tasks like writing SQL queries, creating tables, and making an ER diagram. It also includes SQL copies of the database and table structures.
+      </p>
+
+      <h2>Step-by-Step Process</h2>
+
+      <h3>1. Employees Table</h3>
+      <ul>
+        <li><b>employee_id</b>: Unique integer, auto-increment, primary key.</li>
+        <li><b>employee_name</b>: VARCHAR (255 characters), not null.</li>
+        <li><b>manager_id</b>: Integer, foreign key referencing <b>employee_id</b> from the same table.</li>
+      </ul>
+
+      <h3>2. Departments Table</h3>
+      <ul>
+        <li><b>department_id</b>: Unique integer, auto-increment, primary key.</li>
+        <li><b>department_name</b>: VARCHAR (255 characters), not null.</li>
+      </ul>
+
+      <h3>3. Employee_Departments Table</h3>
+      <ul>
+        <li><b>employee_id</b>: Integer, foreign key referencing <b>employee_id</b> in employees.</li>
+        <li><b>department_id</b>: Integer, foreign key referencing <b>department_id</b> in departments.</li>
+        <li>Composite primary key on <b>employee_id</b> and <b>department_id</b>.</li>
+      </ul>
+
+      <h3>4. Employee_Projects Table</h3>
+      <ul>
+        <li><b>employee_id</b>: Integer, foreign key referencing <b>employee_id</b> in employees.</li>
+        <li><b>project_name</b>: VARCHAR (255 characters), not null.</li>
+      </ul>
+
+      <h3>5. Managers Table</h3>
+      <ul>
+        <li><b>manager_id</b>: Unique integer, auto-increment, primary key.</li>
+        <li><b>employee_id</b>: Integer, foreign key referencing <b>employee_id</b> in employees.</li>
+      </ul>
+
+      <h2>Screenshots</h2>
+
+      <h3>Query Statements</h3>
+      <h4>1. Employee Table</h4>
+      <img src="https://github.com/user-attachments/assets/b498133d-3217-4e49-a99e-034cd2fd0cc0" alt="Employee Table Query" />
+      <h4>2. Department Table</h4>
+      <img src="https://github.com/user-attachments/assets/df99dbf8-66cb-40d1-ac64-6dd44b23d96d" alt="Department Table Query" />
+      <h4>3. Employee Departments Table</h4>
+      <img src="https://github.com/user-attachments/assets/a38b7700-6b85-4289-99e2-079a2066b877" alt="Employee Departments Table Query" />
+      <h4>4. Employee Project Table</h4>
+      <img src="https://github.com/user-attachments/assets/f616c818-4c2a-45d8-a29c-858e707fe2ef" alt="Employee Project Table Query" />
+      <h4>5. Managers Table</h4>
+      <img src="https://github.com/user-attachments/assets/6d758544-6e6d-43af-9ea1-2a0c032e5fe5" alt="Managers Table Query" />
+
+      <h3>Table Structure</h3>
+      <h4>1. Employee Table</h4>
+      <img src="https://github.com/user-attachments/assets/f21a67d7-9648-4df4-a877-7c68b2818fb3" alt="Employee Table Structure" />
+      <h4>2. Department Table</h4>
+      <img src="https://github.com/user-attachments/assets/728ad6b6-c8ea-4402-9d22-b0f9395ab5ec" alt="Department Table Structure" />
+      <h4>3. Employee Departments Table</h4>
+      <img src="https://github.com/user-attachments/assets/ff338aef-87e6-46e0-a162-8a4fb2fe8036" alt="Employee Departments Table Structure" />
+      <h4>4. Employee Project Table</h4>
+      <img src="https://github.com/user-attachments/assets/ab998455-5991-47ad-ab1d-1abcf043980c" alt="Employee Project Table Structure" />
+      <h4>5. Managers Table</h4>
+      <img src="https://github.com/user-attachments/assets/d77b6125-ce98-4be6-abbc-7d2856af59ab" alt="Managers Table Structure" />
+
+      <h2>ER Diagram</h2>
+      <img src="https://github.com/user-attachments/assets/e1e23f05-fe09-4344-b96f-3e0eb3a3b5d6" alt="ER Diagram" />
+
+      <div class="button-row">
+        <a href="https://greidengueco.github.io/EDM-Portfolio/" class="system-btn">BACK TO PORTFOLIO</a>
+        <a href="https://github.com/user-attachments/files/19663244/Gueco.docx" class="system-btn" target="_blank">VIEW ON GITHUB</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
